@@ -4,8 +4,9 @@ Physics in plain words (full description in README):
   * A square peg (20 mm wide, 50 mm long) is carried by a "hand" that can slide along x, y, z.
     Each axis has a stiff spring-damper position actuator (a PD controller), like a position-controlled arm.
   * A block has a square hole with a 45 degree chamfer (a sloped funnel) around its mouth.
-  * A MuJoCo force sensor and torque sensor sit at the hand/peg joint, so they read the contact load
-    on the peg (6 numbers).
+  * The peg is a separate body welded to the hand (no joint). A MuJoCo force sensor and torque sensor sit on that
+    weld, so they read the load passing from the peg to the hand: contact force plus the peg's own inertia (6 numbers).
+    This is deliberate: a sensor on the hand itself would also read the actuator's drive force.
   * Gravity is off (the peg's weight is assumed compensated), so the F/T reading is contact only.
 Control: 20 Hz. One action = a displacement command: the position setpoint moves by action * 4 mm per step. The setpoint
 may lead the measured position by at most 5 mm (so the arm can push with at most 2000 N/m * 5 mm = 10 N per axis).
@@ -72,8 +73,8 @@ def build_xml(clearance=0.001, chamfer=0.004, friction=0.3):
       <joint name="jy" type="slide" axis="0 1 0" damping="0" armature="0.01"/>
       <joint name="jz" type="slide" axis="0 0 1" damping="0" armature="0.01"/>
       <inertial pos="0 0 0" mass="0.5" diaginertia="0.001 0.001 0.001"/>
-      <site name="ft" pos="0 0 0" size="0.002"/>
       <body name="peg">
+        <site name="ft" pos="0 0 0" size="0.002"/>
         <geom name="peg" type="box" size="{PEG_HALF} {PEG_HALF} {PEG_HALF_LEN}" mass="0.1" friction="{friction} 0.005 0.0001"/>
       </body>
     </body>

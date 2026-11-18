@@ -103,3 +103,16 @@ def test_expert_beats_baseline_and_privilege_matters():
 
     blind = np.mean([rollout(env, Blind(seed=1), s)["success"] for s in seeds])
     assert blind < exp - 0.4  # without privileged information the expert collapses
+
+
+def test_ft_is_a_wrist_sensor_not_an_actuator_readout():
+    """In free flight the reading must be near zero (only the 0.1 kg peg's inertia, about m*a < 0.5 N), even though the
+    actuators push with about 1 N while accelerating the 0.6 kg hand+peg."""
+    env = InsertionEnv(force_noise=0.0, torque_noise=0.0)
+    env.reset(0)
+    peak_actuator = peak_ft = 0.0
+    for _ in range(6):
+        env.step([0, 0, -1])
+        peak_ft = max(peak_ft, float(np.linalg.norm(env.ft()[:3])))
+        peak_actuator = max(peak_actuator, float(np.abs(env.d.actuator_force).max()))
+    assert peak_actuator > 1.0 and peak_ft < 0.5

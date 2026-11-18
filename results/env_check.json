@@ -1,0 +1,87 @@
+{
+ "mujoco": "4.0.1",
+ "stability": {
+  "episodes": 50,
+  "control_steps": 4962,
+  "nonfinite_obs": 0,
+  "max_abs_velocity_m_s": 0.0938488137292626,
+  "lowest_tip_z_m": -0.015073892660439014,
+  "control_steps_per_second": 8104.256711512627
+ },
+ "ft_press_test": {
+  "expected_fz_N": 10.0,
+  "measured_fz_N": -9.999999997928095,
+  "measured_fx_N": 3.427314009229896e-10,
+  "measured_fy_N": -3.427318183401803e-10
+ },
+ "baseline_vs_geometry_sigma3mm": {
+  "clearance_0.5mm_chamfer_2mm": {
+   "success": 0.19,
+   "wilson95": [
+    0.1251465399270426,
+    0.27779024070807856
+   ]
+  },
+  "clearance_0.5mm_chamfer_4mm": {
+   "success": 0.19,
+   "wilson95": [
+    0.1251465399270426,
+    0.27779024070807856
+   ]
+  },
+  "clearance_0.5mm_chamfer_6mm": {
+   "success": 0.19,
+   "wilson95": [
+    0.1251465399270426,
+    0.27779024070807856
+   ]
+  },
+  "clearance_1mm_chamfer_2mm": {
+   "success": 0.27,
+   "wilson95": [
+    0.1926946091766482,
+    0.3643230022623127
+   ]
+  },
+  "clearance_1mm_chamfer_4mm": {
+   "success": 0.25,
+   "wilson95": [
+    0.1754509400372426,
+    0.3430464637007583
+   ]
+  },
+  "clearance_1mm_chamfer_6mm": {
+   "success": 0.27,
+   "wilson95": [
+    0.1926946091766482,
+    0.3643230022623127
+   ]
+  },
+  "clearance_2mm_chamfer_2mm": {
+   "success": 0.57,
+   "wilson95": [
+    0.4721521169586435,
+    0.6626686099947162
+   ]
+  },
+  "clearance_2mm_chamfer_4mm": {
+   "success": 0.52,
+   "wilson95": [
+    0.4231640509017654,
+    0.6153561567991945
+   ]
+  },
+  "clearance_2mm_chamfer_6mm": {
+   "success": 0.57,
+   "wilson95": [
+    0.4721521169586435,
+    0.6626686099947162
+   ]
+  }
+ },
+ "chosen": {
+  "clearance_mm": 1.0,
+  "chamfer_mm": 4.0,
+  "note": "defaults, picked before any policy was trained"
+ }
+}
