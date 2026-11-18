@@ -6,13 +6,13 @@
   "nonfinite_obs": 0,
   "max_abs_velocity_m_s": 0.0938488137292626,
   "lowest_tip_z_m": -0.015073892660439014,
-  "control_steps_per_second": 8104.256711512627
+  "control_steps_per_second": 4107.346945590246
  },
  "ft_press_test": {
   "expected_fz_N": 10.0,
-  "measured_fz_N": -9.999999997928095,
-  "measured_fx_N": 3.427314009229896e-10,
-  "measured_fy_N": -3.427318183401803e-10
+  "measured_fz_N": -9.999999999768518,
+  "measured_fx_N": 3.428266933108694e-10,
+  "measured_fy_N": -3.4282709594730857e-10
  },
  "baseline_vs_geometry_sigma3mm": {
   "clearance_0.5mm_chamfer_2mm": {
@@ -82,6 +82,6 @@
  "chosen": {
   "clearance_mm": 1.0,
   "chamfer_mm": 4.0,
-  "note": "defaults, picked before any policy was trained"
+  "note": "kept from a first probe of 4 geometries (baseline 17-29% in all); picked before any policy was trained"
  }
 }

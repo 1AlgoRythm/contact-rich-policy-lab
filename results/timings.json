@@ -1,0 +1,56 @@
+{
+ "train": {
+  "wall_seconds": 1142.1,
+  "cmd": "sh scripts/train_all.sh",
+  "loadavg_after": [
+   47.1,
+   66.2,
+   76.6
+  ]
+ },
+ "envcheck": {
+  "wall_seconds": 30.8,
+  "cmd": ".venv/bin/python scripts/check_env.py > /dev/null",
+  "loadavg_after": [
+   68.7,
+   68.7,
+   76.9
+  ]
+ },
+ "demos": {
+  "wall_seconds": 4.2,
+  "cmd": ".venv/bin/python scripts/gen_demos.py",
+  "loadavg_after": [
+   72.7,
+   69.5,
+   77.2
+  ]
+ },
+ "eval": {
+  "wall_seconds": 807.9,
+  "cmd": ".venv/bin/python scripts/evaluate.py --n 200",
+  "loadavg_after": [
+   16.9,
+   41.8,
+   58.9
+  ]
+ },
+ "ddim": {
+  "wall_seconds": 104.1,
+  "cmd": ".venv/bin/python scripts/ddim_steps.py",
+  "loadavg_after": [
+   8.5,
+   31.5,
+   52.8
+  ]
+ },
+ "onnx": {
+  "wall_seconds": 27.9,
+  "cmd": ".venv/bin/python scripts/bench_onnx.py",
+  "loadavg_after": [
+   12.0,
+   30.1,
+   51.6
+  ]
+ }
+}

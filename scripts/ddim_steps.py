@@ -12,7 +12,7 @@ from clpl.env import InsertionEnv  # noqa: E402
 from clpl.stats import wilson  # noqa: E402
 from scripts.evaluate import EVAL_SEED0, load_agent, run_episodes  # noqa: E402
 
-N, STEPS = 200, [1, 2, 5, 10, 20, 50]
+N, STEPS = 100, [1, 2, 5, 10, 20]
 
 
 def main():
