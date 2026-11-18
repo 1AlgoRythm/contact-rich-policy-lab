@@ -1,0 +1,17 @@
+{
+  "demos_kept": 500,
+  "attempts": 500,
+  "expert_success_rate": 1.0,
+  "expert_success_wilson95": [
+    0.9923753814690964,
+    0.9999999999999999
+  ],
+  "samples": 10501,
+  "mean_len": 21.002,
+  "seed_range": [
+    0,
+    499
+  ],
+  "hole_noise_m": 0.003,
+  "wall_seconds": 1.1747639179229736
+}
